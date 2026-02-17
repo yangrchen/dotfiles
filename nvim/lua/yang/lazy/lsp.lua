@@ -20,38 +20,61 @@ return {
             end
 
             -- Attach keymaps when an LSP connects to a buffer
+            -- 0.11 provides grn, gra, grr, gri, K by default
             vim.api.nvim_create_autocmd("LspAttach", {
-                group = vim.api.nvim_create_augroup("UserLspConfig", {}),
+                group = vim.api.nvim_create_augroup("UserLspConfig", { clear = true }),
                 callback = function(ev)
                     local opts = { buffer = ev.buf }
                     vim.keymap.set("n", "gd", vim.lsp.buf.definition, vim.tbl_extend("force", opts, { desc = "Go to definition" }))
                     vim.keymap.set("n", "gD", vim.lsp.buf.declaration, vim.tbl_extend("force", opts, { desc = "Go to declaration" }))
                     vim.keymap.set("n", "K", vim.lsp.buf.hover, vim.tbl_extend("force", opts, { desc = "Hover docs" }))
-                    vim.keymap.set("n", "gi", vim.lsp.buf.implementation, vim.tbl_extend("force", opts, { desc = "Go to implementation" }))
-                    vim.keymap.set("n", "gr", vim.lsp.buf.references, vim.tbl_extend("force", opts, { desc = "References" }))
-                    vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, vim.tbl_extend("force", opts, { desc = "Rename symbol" }))
-                    vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, vim.tbl_extend("force", opts, { desc = "Code action" }))
                     vim.keymap.set("n", "<leader>d", vim.diagnostic.open_float, vim.tbl_extend("force", opts, { desc = "Show diagnostic" }))
                     vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, vim.tbl_extend("force", opts, { desc = "Previous diagnostic" }))
                     vim.keymap.set("n", "]d", vim.diagnostic.goto_next, vim.tbl_extend("force", opts, { desc = "Next diagnostic" }))
                 end,
             })
 
+            -- Disable ruff's hover in favour of pyright (docs-recommended approach)
+            vim.api.nvim_create_autocmd("LspAttach", {
+                group = vim.api.nvim_create_augroup("lsp_attach_disable_ruff_hover", { clear = true }),
+                callback = function(args)
+                    local client = vim.lsp.get_client_by_id(args.data.client_id)
+                    if client and client.name == "ruff" then
+                        client.server_capabilities.hoverProvider = false
+                    end
+                end,
+                desc = "LSP: Disable hover capability from Ruff",
+            })
+
+            vim.lsp.config("pyright", {
+                capabilities = capabilities,
+                settings = {
+                    pyright = {
+                        disableOrganizeImports = true,
+                    },
+                    python = {
+                        analysis = {
+                            ignore = { "*" },
+                        },
+                    },
+                },
+            })
+
+            vim.lsp.config("ruff", {
+                capabilities = capabilities,
+                init_options = {
+                    settings = {},
+                },
+            })
+
             require("mason-lspconfig").setup({
                 ensure_installed = {
                     "ts_ls",
                     "pyright",
+                    "ruff",
                     "html",
                     "cssls",
                     "jsonls",
-                },
-                handlers = {
-                    -- Default handler: set up each installed server
-                    function(server_name)
-                        require("lspconfig")[server_name].setup({
-                            capabilities = capabilities,
-                        })
-                    end,
                 },
             })
         end,
