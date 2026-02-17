@@ -1,0 +1,234 @@
+{
+    "[python]": {
+        "editor.formatOnType": true,
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "charliermarsh.ruff",
+    },
+    "notebook.codeActionsOnSave": {
+        "notebook.source.fixAll.ruff": "explicit",
+        "notebook.source.organizeImports.ruff": "explicit"
+    },
+    "notebook.defaultFormatter": "charliermarsh.ruff",
+    "notebook.formatOnSave.enabled": true,
+    "notebook.lineNumbers": "on",
+    "notebook.output.textLineLimit": 100,
+    "notebook.output.wordWrap": true,
+    "python.analysis.completeFunctionParens": true,
+    "editor.fontSize": 14,
+    "editor.fontLigatures": true,
+    "terminal.integrated.fontSize": 18,
+    "update.mode": "manual",
+    "editor.smoothScrolling": true,
+    "editor.wordWrap": "on",
+    "remote.SSH.connectTimeout": 60,
+    "editor.formatOnPaste": true,
+    "remote.SSH.enableRemoteCommand": true,
+    "terminal.external.osxExec": "iTerm.app",
+    "editor.lineNumbers": "on",
+    "editor.cursorSmoothCaretAnimation": "on",
+    "editor.cursorBlinking": "solid",
+    "terminal.integrated.tabs.defaultColor": "terminal.ansiBlue",
+    "vim.cursorStylePerMode.insert": "underline",
+    "terminal.integrated.localEchoEnabled": "off",
+    "workbench.colorCustomizations": {
+        "statusBar.background": "#5c0f4a",
+        "statusBar.foreground": "#ffffff",
+        "editor.lineHighlightBackground": "#330e5d",
+        "editor.selectionBackground": "#330e5d",
+        "editorLineNumber.foreground": "#7cead0c9",
+        "editorLineNumber.activeForeground": "#ffffff",
+        "sideBarSectionHeader.background": "#35033c",
+        "activityBar.inactiveForeground": "#ffffff97",
+        "titleBar.activeBackground": "#501d8f",
+        "gitDecoration.untrackedResourceForeground": "#0af59b",
+        "list.focusBackground": "#330e5d"
+    },
+    "files.associations": {
+        "*.rmd": "markdown"
+    },
+    "terminal.integrated.smoothScrolling": true,
+    "workbench.colorTheme": "Catppuccin Macchiato",
+    "terminal.integrated.fontFamily": "FiraCode Nerd Font Mono",
+    "python.defaultInterpreterPath": "/Users/yangrchen/dev/test/.venv",
+    "workbench.iconTheme": "catppuccin-macchiato",
+    // Vim Settings
+    "vim.easymotion": true,
+    "vim.incsearch": true,
+    "vim.useSystemClipboard": true,
+    "vim.useCtrlKeys": true,
+    "vim.hlsearch": true,
+    "vim.leader": "<space>",
+    "vim.normalModeKeyBindingsNonRecursive": [
+        {
+            "before": [
+                "<leader>",
+                "\\"
+            ],
+            "after": [
+                "<C-w>",
+                "v"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "-"
+            ],
+            "after": [
+                "<C-w>",
+                "s"
+            ]
+        },
+        {
+            "before": [
+                "<enter>"
+            ],
+            "after": [
+                "o",
+                "<ESC>"
+            ]
+        },
+        {
+            "before": [
+                "g",
+                "p",
+                "d"
+            ],
+            "commands": [
+                "editor.action.peekDefinition"
+            ]
+        },
+        {
+            "before": [
+                "g",
+                "h"
+            ],
+            "commands": [
+                "editor.action.showDefinitionPreviewHover"
+            ]
+        },
+        {
+            "before": [
+                "g",
+                "i"
+            ],
+            "commands": [
+                "editor.action.goToImplementation"
+            ]
+        },
+        {
+            "before": [
+                "g",
+                "p",
+                "i"
+            ],
+            "commands": [
+                "editor.action.peekImplementation"
+            ]
+        },
+        {
+            "before": [
+                "g",
+                "q"
+            ],
+            "commands": [
+                "editor.action.quickFix"
+            ]
+        },
+        {
+            "before": [
+                "g",
+                "r"
+            ],
+            "commands": [
+                "editor.action.referenceSearch.trigger"
+            ]
+        },
+        {
+            "before": [
+                "g",
+                "t"
+            ],
+            "commands": [
+                "editor.action.goToTypeDefinition"
+            ]
+        },
+        {
+            "before": [
+                "g",
+                "p",
+                "t"
+            ],
+            "commands": [
+                "editor.action.peekTypeDefinition"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "e"
+            ],
+            "commands": [
+                "workbench.view.explorer"
+            ]
+        },
+        {
+            "before": [
+                "]",
+                "d"
+            ],
+            "commands": [
+                "editor.action.marker.next"
+            ]
+        },
+        {
+            "before": [
+                "[",
+                "d"
+            ],
+            "commands": [
+                "editor.action.marker.prev"
+            ]
+        },
+        {
+            "before": [
+                "H"
+            ], // Focus previous tab at the left
+            "commands": [
+                "workbench.action.previousEditor"
+            ]
+        },
+        {
+            "before": [
+                "L"
+            ], // Focus next tab at the right
+            "commands": [
+                "workbench.action.nextEditor"
+            ]
+        },
+    ],
+    // To improve performance
+    "extensions.experimental.affinity": {
+        "vscodevim.vim": 1
+    },
+    "notebook.editorOptionsCustomizations": {
+        "editor.tabSize": 4,
+        "editor.indentSize": 4
+    },
+    "explorer.fileNesting.patterns": {
+        "*.ts": "${capture}.js",
+        "*.js": "${capture}.js.map, ${capture}.min.js, ${capture}.d.ts",
+        "*.jsx": "${capture}.js",
+        "*.tsx": "${capture}.ts",
+        "tsconfig.json": "tsconfig.*.json",
+        "package.json": "package-lock.json, yarn.lock, pnpm-lock.yaml, bun.lockb",
+        "*.sqlite": "${capture}.${extname}-*",
+        "*.db": "${capture}.${extname}-*",
+        "*.sqlite3": "${capture}.${extname}-*",
+        "*.db3": "${capture}.${extname}-*",
+        "*.sdb": "${capture}.${extname}-*",
+        "*.s3db": "${capture}.${extname}-*"
+    },
+    "tailwindCSS.emmetCompletions": true,
+    "editor.fontFamily": "FiraCode Nerd Font Mono",
+}

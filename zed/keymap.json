@@ -1,0 +1,124 @@
+// Zed keymap
+//
+// For information on binding keys, see the Zed
+// documentation: https://zed.dev/docs/key-bindings
+//
+// To see the default key bindings run `zed: open default keymap`
+// from the command palette.
+[
+    {
+        "context": "Editor",
+        "bindings": {
+            "alt-h": "workspace::ActivatePaneLeft",
+            "alt-l": "workspace::ActivatePaneRight",
+            "alt-k": "workspace::ActivatePaneUp",
+            "alt-j": "workspace::ActivatePaneDown",
+            "cmd-d": ["editor::SelectNext", { "replace_newest": false }],
+            "cmd-j": "workspace::ToggleBottomDock",
+            "cmd-o": "workspace::Open",
+            "cmd-q": "workspace::CloseWindow",
+            "cmd-x cmd-a": "assistant::InlineAssist"
+        }
+    },
+    {
+        "context": "Editor && (showing_code_actions || showing_completions)",
+        "use_key_equivalents": true,
+        "bindings": {
+            "ctrl-k": "editor::ContextMenuPrevious",
+            "ctrl-j": "editor::ContextMenuNext"
+        }
+    },
+    {
+        "context": "Pane",
+        "bindings": {
+            "alt-1": ["pane::ActivateItem", 0],
+            "alt-2": ["pane::ActivateItem", 1],
+            "alt-3": ["pane::ActivateItem", 2],
+            "alt-4": ["pane::ActivateItem", 3],
+            "alt-5": ["pane::ActivateItem", 4],
+            "alt-6": ["pane::ActivateItem", 5],
+            "alt-7": ["pane::ActivateItem", 6],
+            "alt-8": ["pane::ActivateItem", 7],
+            "alt-9": ["pane::ActivateItem", 8],
+            "alt-0": "pane::ActivateLastItem"
+        }
+    },
+    {
+        "context": "Editor && edit_prediction",
+        "bindings": {
+            "alt-tab": "editor::AcceptEditPrediction",
+            "alt-y": "editor::AcceptEditPrediction",
+            "tab": "editor::AcceptEditPrediction"
+        }
+    },
+    {
+        "context": "Editor && edit_prediction_conflict",
+        "bindings": {
+            "alt-tab": "editor::AcceptEditPrediction",
+            "alt-y": "editor::AcceptEditPrediction"
+        }
+    },
+    {
+        "context": "Editor && vim_mode == normal",
+        "bindings": {
+            "space e": "workspace::ToggleLeftDock",
+            "space /": "editor::ToggleComments",
+            "space p": "editor::Format",
+            "space space": "file_finder::Toggle",
+            "shift-l": "pane::ActivateNextItem",
+            "shift-h": "pane::ActivatePreviousItem",
+            "space v": "pane::SplitRight",
+            "space l": "workspace::ActivateNextPane",
+            "space h": "workspace::ActivatePreviousPane",
+            "space t": "task::Spawn"
+        }
+    },
+    {
+        "context": "Editor && vim_mode == visual",
+        "bindings": {
+            "shift-j": "editor::MoveLineDown",
+            "shift-k": "editor::MoveLineUp"
+        }
+    },
+    {
+        "context": "ProjectPanel",
+        "bindings": {
+            "space e": "workspace::ToggleLeftDock"
+        }
+    },
+    {
+        "context": "Terminal",
+        "bindings": {
+            "cmd-j": "workspace::ToggleBottomDock",
+            "cmd-w": "pane::CloseActiveItem"
+        }
+    },
+    {
+        "context": "Dock",
+        "bindings": {
+            "cmd-h": "workspace::ActivatePaneLeft",
+            "cmd-l": "workspace::ActivatePaneRight",
+            "cmd-k": "workspace::ActivatePaneUp",
+            "cmd-j": "workspace::ActivatePaneDown"
+            // ... or other keybindings
+        }
+    },
+    {
+        "context": "CommandPalette",
+        "bindings": {
+            "alt-j": "editor::ContextMenuNext"
+        }
+    },
+    {
+        "context": "Workspace",
+        "bindings": {
+            "cmd-~": "workspace::NewTerminal"
+        }
+    },
+    {
+        "context": "Workspace",
+        "bindings": {
+            "cmd-`": "terminal_panel::Toggle"
+        }
+    }
+]
