@@ -62,9 +62,9 @@ return {
 
             vim.lsp.config("ruff", {
                 capabilities = capabilities,
-                init_options = {
-                    settings = {},
-                },
+                -- init_options = {
+                --     settings = {},
+                -- },
             })
 
             require("mason-lspconfig").setup({
