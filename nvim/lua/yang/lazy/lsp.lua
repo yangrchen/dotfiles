@@ -67,6 +67,11 @@ return {
                 -- },
             })
 
+            vim.lsp.config("prettier", {
+                capabilities = capabilities,
+                filetypes = { "markdown" },
+            })
+
             require("mason-lspconfig").setup({
                 ensure_installed = {
                     "ts_ls",
@@ -75,6 +80,7 @@ return {
                     "html",
                     "cssls",
                     "jsonls",
+                    "prettier",
                 },
             })
         end,
