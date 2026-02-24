@@ -79,8 +79,7 @@ return {
                     "ruff",
                     "html",
                     "cssls",
-                    "jsonls",
-                    "prettier",
+                    "jsonls"
                 },
             })
         end,
