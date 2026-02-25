@@ -17,16 +17,16 @@
             "cmd-j": "workspace::ToggleBottomDock",
             "cmd-o": "workspace::Open",
             "cmd-q": "workspace::CloseWindow",
-            "cmd-x cmd-a": "assistant::InlineAssist"
-        }
+            "cmd-x cmd-a": "assistant::InlineAssist",
+        },
     },
     {
         "context": "Editor && (showing_code_actions || showing_completions)",
         "use_key_equivalents": true,
         "bindings": {
             "ctrl-k": "editor::ContextMenuPrevious",
-            "ctrl-j": "editor::ContextMenuNext"
-        }
+            "ctrl-j": "editor::ContextMenuNext",
+        },
     },
     {
         "context": "Pane",
@@ -40,58 +40,57 @@
             "alt-7": ["pane::ActivateItem", 6],
             "alt-8": ["pane::ActivateItem", 7],
             "alt-9": ["pane::ActivateItem", 8],
-            "alt-0": "pane::ActivateLastItem"
-        }
+            "alt-0": "pane::ActivateLastItem",
+        },
     },
     {
         "context": "Editor && edit_prediction",
         "bindings": {
             "alt-tab": "editor::AcceptEditPrediction",
             "alt-y": "editor::AcceptEditPrediction",
-            "tab": "editor::AcceptEditPrediction"
-        }
+            "tab": "editor::AcceptEditPrediction",
+        },
     },
     {
         "context": "Editor && edit_prediction_conflict",
         "bindings": {
             "alt-tab": "editor::AcceptEditPrediction",
-            "alt-y": "editor::AcceptEditPrediction"
-        }
+            "alt-y": "editor::AcceptEditPrediction",
+        },
     },
     {
         "context": "Editor && vim_mode == normal",
         "bindings": {
             "space e": "workspace::ToggleLeftDock",
             "space /": "editor::ToggleComments",
-            "space p": "editor::Format",
-            "space space": "file_finder::Toggle",
+            "space p": "file_finder::Toggle",
             "shift-l": "pane::ActivateNextItem",
             "shift-h": "pane::ActivatePreviousItem",
             "space v": "pane::SplitRight",
-            "space l": "workspace::ActivateNextPane",
-            "space h": "workspace::ActivatePreviousPane",
-            "space t": "task::Spawn"
-        }
+            "space h": "workspace::ActivatePaneLeft",
+            "space l": "workspace::ActivatePaneRight",
+            "space t": "task::Spawn",
+        },
     },
     {
         "context": "Editor && vim_mode == visual",
         "bindings": {
             "shift-j": "editor::MoveLineDown",
-            "shift-k": "editor::MoveLineUp"
-        }
+            "shift-k": "editor::MoveLineUp",
+        },
     },
     {
         "context": "ProjectPanel",
         "bindings": {
-            "space e": "workspace::ToggleLeftDock"
-        }
+            "space e": "workspace::ToggleLeftDock",
+        },
     },
     {
         "context": "Terminal",
         "bindings": {
             "cmd-j": "workspace::ToggleBottomDock",
-            "cmd-w": "pane::CloseActiveItem"
-        }
+            "cmd-w": "pane::CloseActiveItem",
+        },
     },
     {
         "context": "Dock",
@@ -99,26 +98,15 @@
             "cmd-h": "workspace::ActivatePaneLeft",
             "cmd-l": "workspace::ActivatePaneRight",
             "cmd-k": "workspace::ActivatePaneUp",
-            "cmd-j": "workspace::ActivatePaneDown"
+            "cmd-j": "workspace::ActivatePaneDown",
             // ... or other keybindings
-        }
-    },
-    {
-        "context": "CommandPalette",
-        "bindings": {
-            "alt-j": "editor::ContextMenuNext"
-        }
+        },
     },
     {
         "context": "Workspace",
         "bindings": {
-            "cmd-~": "workspace::NewTerminal"
-        }
+            "cmd-~": "workspace::NewTerminal",
+            "cmd-`": "terminal_panel::Toggle",
+        },
     },
-    {
-        "context": "Workspace",
-        "bindings": {
-            "cmd-`": "terminal_panel::Toggle"
-        }
-    }
 ]
