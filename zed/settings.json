@@ -7,25 +7,32 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+    "theme": "Catppuccin Macchiato (Blur)",
+    "soft_wrap": "bounded",
+    "agent_servers": {
+        "claude-acp": {
+            "type": "registry",
+        },
+    },
     "telemetry": {
         "diagnostics": true,
-        "metrics": false
+        "metrics": false,
     },
     "edit_predictions": {
         "provider": "zed",
-        "mode": "subtle",
+        "mode": "eager",
         "copilot": {
             "proxy": null,
-            "proxy_no_verify": null
+            "proxy_no_verify": null,
         },
-        "enabled_in_text_threads": false
+        "enabled_in_text_threads": false,
     },
     "icon_theme": "Catppuccin Macchiato",
     "agent": {
         "default_model": {
             "provider": "zed.dev",
-            "model": "claude-sonnet-4"
-        }
+            "model": "claude-sonnet-4",
+        },
     },
     "base_keymap": "VSCode",
     "vim_mode": true,
@@ -33,9 +40,8 @@
     "buffer_font_size": 16,
     "format_on_save": "on",
     "tab_size": 4,
-    "theme": "Catppuccin Macchiato",
     "experimental.theme_overrides": {
-        "editor.highlighted_line.background": "#331e6b"
+        "editor.highlighted_line.background": "#331e6b",
     },
     "lsp": {
         "ruff": {
@@ -44,26 +50,26 @@
                     "lineLength": 88,
                     "showSyntaxErrors": true,
                     "lint": {
-                        "select": ["ALL"]
-                    }
-                }
-            }
+                        "select": ["ALL"],
+                    },
+                },
+            },
         },
         "pyright": {
             "settings": {
                 "python.analysis": {
                     "diagnosticMode": "workspace",
-                    "typeCheckingMode": "off"
-                }
-            }
+                    "typeCheckingMode": "off",
+                },
+            },
         },
         "basedpyright": {
             "settings": {
                 "python.analysis": {
-                    "typeCheckingMode": "basic"
-                }
-            }
-        }
+                    "typeCheckingMode": "basic",
+                },
+            },
+        },
     },
     "languages": {
         "Python": {
@@ -71,17 +77,17 @@
             "format_on_save": "on",
             "formatter": [
                 {
-                    "code_action": "source.organizeImports.ruff"
+                    "code_action": "source.organizeImports.ruff",
                 },
                 {
-                    "code_action": "source.fixAll.ruff"
+                    "code_action": "source.fixAll.ruff",
                 },
                 {
                     "language_server": {
-                        "name": "ruff"
-                    }
-                }
-            ]
-        }
-    }
+                        "name": "ruff",
+                    },
+                },
+            ],
+        },
+    },
 }

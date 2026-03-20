@@ -18,6 +18,10 @@
             "cmd-o": "workspace::Open",
             "cmd-q": "workspace::CloseWindow",
             "cmd-x cmd-a": "assistant::InlineAssist",
+            "cmd-alt-c": [
+                "agent::NewExternalAgentThread",
+                { "agent": { "custom": { "name": "claude-acp" } } },
+            ],
         },
     },
     {
@@ -43,21 +47,21 @@
             "alt-0": "pane::ActivateLastItem",
         },
     },
-    {
-        "context": "Editor && edit_prediction",
-        "bindings": {
-            "alt-tab": "editor::AcceptEditPrediction",
-            "alt-y": "editor::AcceptEditPrediction",
-            "tab": "editor::AcceptEditPrediction",
-        },
-    },
-    {
-        "context": "Editor && edit_prediction_conflict",
-        "bindings": {
-            "alt-tab": "editor::AcceptEditPrediction",
-            "alt-y": "editor::AcceptEditPrediction",
-        },
-    },
+    // {
+    //     "context": "Editor && edit_prediction",
+    //     "bindings": {
+    //         "alt-tab": "editor::AcceptEditPrediction",
+    //         "alt-y": "editor::AcceptEditPrediction",
+    //         "tab": "editor::AcceptEditPrediction",
+    //     },
+    // },
+    // {
+    //     "context": "Editor && edit_prediction_conflict",
+    //     "bindings": {
+    //         "alt-tab": "editor::AcceptEditPrediction",
+    //         "alt-y": "editor::AcceptEditPrediction",
+    //     },
+    // },
     {
         "context": "Editor && vim_mode == normal",
         "bindings": {
